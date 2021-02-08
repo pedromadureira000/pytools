@@ -11,7 +11,6 @@ zipp==3.4.0
 pytest==6.2.2
 py==1.10.0
 attrs==20.3.0
-importlib-metadata==0.12
 pluggy==0.13.1
 toml==0.10.2
 iniconfig-==1.1.1
