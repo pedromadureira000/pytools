@@ -12,7 +12,7 @@ def conexao():
 #o decorator fixture do pytest executa a função e traz o resultado para o argumento da linha 10
 #o yield cria uma função geradora
 
-@pytest.fixture
+@pytest.fixture(scope='session')
 def sessao(conexao):
     #setup
     sessao_obj = conexao.gerar_sessao()
