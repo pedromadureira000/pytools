@@ -31,18 +31,6 @@ def test_qtd_de_spam(sessao, usuarios):
     )
     assert len(usuarios) == enviador.enviar.call_count
 
-# class EnviadorMock(Enviador):
-#     def __init__(self):
-#         super().__init__()
-#         self.qtd_email_enviados = 0
-#         self.parametros_de_envio = None
-#     def enviar(self, destinatario, remetente, assunto, corpo):
-#         self.parametros_de_envio = (destinatario, remetente, assunto, corpo)
-#         self.qtd_email_enviados += 1
-#
-#
-
-
 
 def test_paramentros_de_spam(sessao):
     usuario = Usuario(nome='Pedro',email='pedro@solucoesweb.com')
