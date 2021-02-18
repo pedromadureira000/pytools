@@ -28,8 +28,8 @@ def test_remetente(destinatario):
 )
 def test_remetente_invalido(destinatario):
     enviador = Enviador()
-    destinatarios = ['joaozinho@gmail.com', 'lerolero@aa.com']
-    #gerenciador de contexto
+    # destinatarios = ['joaozinho@gmail.com', 'lerolero@aa.com']
+    # gerenciador de contexto
     with pytest.raises(EmailInvalido):
         enviador.enviar(
             destinatario,
