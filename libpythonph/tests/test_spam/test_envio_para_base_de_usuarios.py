@@ -42,6 +42,7 @@ def test_qtd_de_spam(sessao, usuarios):
 #         'assunto',
 #         'corpo do email'
 #     )
+#     print(id(enviador),id(enviador_de_spam.enviador))
 #     assert len(usuarios) == enviador_de_spam.enviador.enviar.call_count
 
 def test_paramentros_de_spam(sessao):

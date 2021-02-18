@@ -13,5 +13,4 @@ def buscar_avatar(usuario):
     # json() transforma um json em um dicionario (o json ja tem o formato de dicionario)
 
 
-if __name__ == '__main__':
-    print(buscar_avatar('dunossauro'))
+
