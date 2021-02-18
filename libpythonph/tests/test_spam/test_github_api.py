@@ -1,8 +1,7 @@
 from unittest.mock import Mock
-
 import pytest
-
 from libpythonph import git_hubapi
+
 
 @pytest.fixture
 def avatar_url():
@@ -22,7 +21,6 @@ def avatar_url():
 def test_buscar_avatar(avatar_url):
     url = git_hubapi.buscar_avatar('renzo')
     assert avatar_url == url
-
 
 def test_buscar_avatar_integracao():
     url = git_hubapi.buscar_avatar('renzoN')

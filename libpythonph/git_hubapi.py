@@ -11,6 +11,3 @@ def buscar_avatar(usuario):
     resp = requests.get(url)
     return resp.json()['avatar_url']
     # json() transforma um json em um dicionario (o json ja tem o formato de dicionario)
-
-
-

@@ -21,7 +21,3 @@ def sessao(conexao):
     #tierdown
     sessao_obj.roll_back()
     sessao_obj.fechar()
-
-
-
-
