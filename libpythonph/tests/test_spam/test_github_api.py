@@ -18,9 +18,11 @@ def avatar_url():
     yield url
     git_hubapi.requests.get = get_original
 
+
 def test_buscar_avatar(avatar_url):
     url = git_hubapi.buscar_avatar('renzo')
     assert avatar_url == url
+
 
 def test_buscar_avatar_integracao():
     url = git_hubapi.buscar_avatar('renzoN')

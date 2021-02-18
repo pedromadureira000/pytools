@@ -1,6 +1,6 @@
 from unittest.mock import Mock
 import pytest
-from libpythonph.spam.criar_enviador_email import Enviador
+# from libpythonph.spam.criar_enviador_email import Enviador
 from libpythonph.spam.main import EnviadorDeSpam
 from libpythonph.spam.modelos import Usuario
 
@@ -9,11 +9,11 @@ from libpythonph.spam.modelos import Usuario
     'usuarios',
     [
         [
-            Usuario(nome='Pedro',email='pedro@solucoesweb.com'),
-            Usuario(nome='Luciano',email='luciano@solucoesweb.com')
+            Usuario(nome='Pedro', email='pedro@solucoesweb.com'),
+            Usuario(nome='Luciano', email='luciano@solucoesweb.com')
         ],
         [
-            Usuario(nome='Pedro',email='pedro@solucoesweb.com')
+            Usuario(nome='Pedro', email='pedro@solucoesweb.com')
         ]
     ]
 )
@@ -28,8 +28,6 @@ def test_qtd_de_spam(sessao, usuarios):
         'corpo do email'
     )
     assert len(usuarios) == enviador.enviar.call_count
-
-
 # def test_qtd_de_spam(sessao, usuarios):
 #     for usuario in usuarios:
 #         sessao.salvar(usuario)
@@ -42,6 +40,7 @@ def test_qtd_de_spam(sessao, usuarios):
 #     )
 #     print(id(enviador),id(enviador_de_spam.enviador))
 #     assert len(usuarios) == enviador_de_spam.enviador.enviar.call_count
+
 
 def test_paramentros_de_spam(sessao):
     usuario = Usuario(nome='Pedro',email='pedro@solucoesweb.com')
