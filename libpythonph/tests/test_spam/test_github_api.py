@@ -18,7 +18,6 @@ def avatar_url(mocker):
     return url
 
 
-
 def test_buscar_avatar(avatar_url):
     url = git_hubapi.buscar_avatar('renzo')
     assert avatar_url == url
