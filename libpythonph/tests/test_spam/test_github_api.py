@@ -4,19 +4,19 @@ from libpythonph import git_hubapi
 
 
 @pytest.fixture
-def avatar_url():
+def avatar_url(mocker):
     resp_mock = Mock()
     url = 'https://avatars.githubusercontent.com/u/402714?v=4'
     resp_mock.json.return_value = {
         'login': 'renzo', 'id': 402714,
         'avatar_url': url
     }
+    get_mock = mocker.patch('libpythonph.git_hubapi.requests.get')
     # vc atribui um Mock a um metodo get da biblioteca requests que foi importada para para o pacote libpythonph que vc
-    # importou no escopo desse codigo.
-    get_original = git_hubapi.requests.get
-    git_hubapi.requests.get = Mock(return_value=resp_mock)
-    yield url
-    git_hubapi.requests.get = get_original
+    # importou no escopo desse codigo. Com pytest-mock a lib volta ao normal apos o test automaticamente.
+    get_mock.return_value = resp_mock
+    return url
+
 
 
 def test_buscar_avatar(avatar_url):
