@@ -17,8 +17,6 @@ from libpythonph.spam.modelos import Usuario
         ]
     ]
 )
-
-
 def test_qtd_de_spam(sessao, usuarios):
     for usuario in usuarios:
         sessao.salvar(usuario)
@@ -29,7 +27,7 @@ def test_qtd_de_spam(sessao, usuarios):
         'assunto',
         'corpo do email'
     )
-    print(id(enviador),id(enviador_de_spam.enviador))
+    print(id(enviador), id(enviador_de_spam.enviador))
     assert len(usuarios) == enviador_de_spam.enviador.enviar.call_count
 
 
